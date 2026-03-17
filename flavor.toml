@@ -5,101 +5,100 @@
 # for dark and light modes under `[flavor]`, and do so in those flavors instead.
 "$schema" = "https://yazi-rs.github.io/schemas/theme.json"
 
-# vim:fileencoding=utf-8:foldmethod=marker
+# ---------------
+# --- PALETTE ---
+# ---------------
 
-# : Flavor {{{
+# "#0d1117" # Black
+# "#2d3138" # Black (Dark 1)
+# "#30363d" # Black (Dark 2)
+# "#010409" # Black (Dark 3)
+# "#e6edf3" # Gray (Light)
+# "#6e7681" # Gray
+# "#7d8590" # Gray (Dark)
+# "#ff7b72" # Red (Light)
+# "#f85149" # Red
+# "#e3b341" # Yellow
+# "#7ee787" # Green (Light)
+# "#56d364" # Green
+# "#3fb950" # Green (Dark)
+# "#56d4dd" # Blue (Light)
+# "#58a6ff" # Blue
+# "#1d4484" # Blue (Dark)
+# "#5a1e02" # Brown
 
 [flavor]
 dark  = ""
 light = ""
 
-# : }}}
 
-
-# : App {{{
 
 [app]
 overall = {}
 
-# : }}}
 
-
-# : Manager {{{
 
 [mgr]
-cwd = { fg = "cyan" }
+cwd = { fg = "#e6edf3" }
 
 # Find
-find_keyword  = { fg = "yellow", bold = true, italic = true, underline = true }
-find_position = { fg = "magenta", bg = "reset", bold = true, italic = true }
+find_keyword  = { fg = "#e3b341", bold = true, underline = true }
+find_position = { fg = "#e3b341", bold = true, bg = "reset" }
 
 # Symlink
-symlink_target = { italic = true }
+symlink_target = { fg = "#6e7681", italic = true }
 
 # Marker
-marker_copied   = { fg = "lightgreen",  bg = "lightgreen" }
-marker_cut      = { fg = "lightred",    bg = "lightred" }
-marker_marked   = { fg = "lightcyan",   bg = "lightcyan" }
-marker_selected = { fg = "lightyellow", bg = "lightyellow" }
-marker_symbol   = "│"
+marker_copied   = { fg = "#56d364", bg = "#56d364" }
+marker_cut      = { fg = "#ff7b72", bg = "#ff7b72" }
+marker_marked   = { fg = "#56d4dd", bg = "#56d4dd" }
+marker_selected = { fg = "#e3b341", bg = "#e3b341" }
 
 # Count
-count_copied   = { fg = "white", bg = "green" }
-count_cut      = { fg = "white", bg = "red" }
-count_selected = { fg = "black", bg = "yellow" }
+count_copied   = { fg = "#e6edf3", bg = "#56d364" }
+count_cut      = { fg = "#e6edf3", bg = "#ff7b72" }
+count_selected = { fg = "#0d1117", bg = "#e3b341" }
 
 # Border
 border_symbol = "│"
-border_style  = { fg = "gray" }
+border_style  = { fg = "#30363d" }
 
 # Highlighting
-syntect_theme = ""
-
-# : }}}
+syntect_theme = "tmtheme.xml"
 
 
-# : Tabs {{{
 
 [tabs]
-active   = { bg = "blue", bold = true }
-inactive = { fg = "blue", bg = "gray" }
+active   = { bg = "#0d1117", fg = "#e6edf3", bold = true }
+inactive = { bg = "#010409", fg = "#7d8590" }
 
 # Separator
-sep_inner = { open = "", close = "" }
-sep_outer = { open = "", close = "" }
-
-# : }}}
+sep_inner = { open = "⌈", close = "⌉" }
+sep_outer = { open = "⌈", close = "⌉" }
 
 
-# : Mode {{{
 
 [mode]
-normal_main = { bg = "blue", bold = true }
-normal_alt  = { fg = "blue", bg = "gray" }
+normal_main = { bg = "#1d4484", bold = true }
+normal_alt  = { bg = "#2d3138", fg = "#e6edf3" }
 
 # Select mode
-select_main = { bg = "red", bold = true }
-select_alt  = { fg = "red", bg = "gray" }
+select_main = { bg = "#f85149", bold = true }
+select_alt  = { bg = "#2d3138", fg = "#e6edf3" }
 
 # Unset mode
-unset_main = { bg = "red", bold = true }
-unset_alt  = { fg = "red", bg = "gray" }
-
-# : }}}
+unset_main = { bg = "#5a1e02", bold = true }
+unset_alt  = { bg = "#2d3138", fg = "#e6edf3" }
 
 
-# : Indicator of hovered file {{{
 
 [indicator]
-parent  = { reversed = true }
-current = { reversed = true }
+parent  = { bg = "#2d3138", fg = "#e6edf3" }
+current = { bg = "#2d3138", fg = "#e6edf3" }
 preview = { underline = true }
 padding = { open = "", close = "" }
 
-# : }}}
 
-
-# : Status bar {{{
 
 [status]
 overall   = {}
@@ -107,101 +106,80 @@ sep_left  = { open = "", close = "" }
 sep_right = { open = "", close = "" }
 
 # Permissions
-perm_sep   = { fg = "darkgray" }
-perm_type  = { fg = "green" }
-perm_read  = { fg = "yellow" }
-perm_write = { fg = "red" }
-perm_exec  = { fg = "cyan" }
+perm_sep   = { fg = "#6e7681" }
+perm_type  = { fg = "#3fb950" }
+perm_read  = { fg = "#e3b341" }
+perm_write = { fg = "#ff7b72" }
+perm_exec  = { fg = "#56d4dd" }
 
 # Progress
 progress_label  = { bold = true }
-progress_normal = { fg = "green", bg = "black" }
-progress_error  = { fg = "yellow", bg = "red" }
-
-# : }}}
+progress_normal = { bg = "#3fb950" }
+progress_error  = { bg = "#e3b341" }
 
 
-# : Which {{{
 
 [which]
 cols            = 3
-mask            = { bg = "black" }
-cand            = { fg = "lightcyan" }
-rest            = { fg = "darkgray" }
-desc            = { fg = "lightmagenta" }
-separator       = "  "
-separator_style = { fg = "darkgray" }
-
-# : }}}
+mask            = { bg = "#0d1117" }
+cand            = { fg = "#3fb950" }
+rest            = { fg = "#6e7681" }
+desc            = { fg = "#e6edf3" }
+separator       = "   "
+separator_style = { fg = "#6e7681" }
 
 
-# : Confirmation {{{
 
 [confirm]
-border     = { fg = "blue" }
-title      = { fg = "blue" }
+border     = { fg = "#7d8590" }
+title      = { fg = "#7d8590" }
 body       = {}
 list       = {}
 btn_yes    = { reversed = true }
 btn_no     = {}
 btn_labels = [ "  [Y]es  ", "  (N)o  " ]
 
-# : }}}
 
-
-# : Spotter {{{
 
 [spot]
-border = { fg = "blue" }
-title  = { fg = "blue" }
+border = { fg = "#7d8590" }
+title  = { fg = "#7d8590" }
 
 # Table
-tbl_col  = { fg = "blue" }
-tbl_cell = { fg = "yellow", reversed = true }
-
-# : }}}
+tbl_col  = { fg = "#1d4484" }
+tbl_cell = { fg = "#e3b341", reversed = true }
 
 
-# : Notification {{{
 
 [notify]
-title_info  = { fg = "green" }
-title_warn  = { fg = "yellow" }
-title_error = { fg = "red" }
+title_info  = { fg = "#3fb950" }
+title_warn  = { fg = "#e3b341" }
+title_error = { fg = "#ff7b72" }
 
 # Icons
 icon_info  = ""
 icon_warn  = ""
 icon_error = ""
 
-# : }}}
 
-
-# : Picker {{{
 
 [pick]
-border   = { fg = "blue" }
-active   = { fg = "magenta", bold = true }
+border   = { fg = "#7d8590" }
+active   = { fg = "#7ee787", bold = true }
 inactive = {}
 
-# : }}}
 
-
-# : Input {{{
 
 [input]
-border   = { fg = "blue" }
+border   = { fg = "#e6edf3" }
 title    = {}
 value    = {}
 selected = { reversed = true }
 
-# : }}}
 
-
-# : Completion {{{
 
 [cmp]
-border   = { fg = "blue" }
+border   = { fg = "#7d8590" }
 active   = { reversed = true }
 inactive = {}
 
@@ -210,77 +188,44 @@ icon_file    = ""
 icon_folder  = ""
 icon_command = ""
 
-# : }}}
 
-
-# : Task manager {{{
 
 [tasks]
-border  = { fg = "blue" }
-title   = {}
-hovered = { fg = "magenta", bold = true }
-
-# : }}}
+border  = { fg = "#7d8590" }
+hovered = { fg = "#7ee787", bold = true }
 
 
-# : Help menu {{{
 
 [help]
-on      = { fg = "cyan" }
-run     = { fg = "magenta" }
+on      = { fg = "#e6edf3" }
+run     = { fg = "#58a6ff" }
 desc    = {}
 hovered = { reversed = true, bold = true }
-footer  = { fg = "black", bg = "white" }
-
-# : }}}
+footer  = { fg = "#0d1117", bg = "#e6edf3" }
 
 
-# : File-specific styles {{{
 
 [filetype]
-rules = [
-	# Image
-	{ mime = "image/*", fg = "yellow" },
-	# Media
-	{ mime = "{audio,video}/*", fg = "magenta" },
-	# Archive
-	{ mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", fg = "red" },
-	# Document
-	{ mime = "application/{pdf,doc,rtf}", fg = "cyan" },
-	# Virtual file system
-	{ mime = "vfs/{absent,stale}", fg = "gray" },
-	# Special file
-	{ url = "*", is = "orphan", bg = "red" },
-	{ url = "*", is = "exec"  , fg = "green" },
-	# Dummy file
-	{ url = "*", is = "dummy", bg = "red" },
-	{ url = "*/", is = "dummy", bg = "red" },
-	# Fallback
-	{ url = "*/", fg = "blue" }
-]
-
-# : }}}
+rules = []
 
 
-# : Icons {{{
 
 [icon]
 globs = []
 dirs  = [
-	{ name = ".config", text = "", fg = "#ff9800" },
-	{ name = ".git", text = "", fg = "#00bcd4" },
-	{ name = ".github", text = "", fg = "#03a9f4" },
-	{ name = ".npm", text = "", fg = "#03a9f4" },
-	{ name = "Desktop", text = "", fg = "#00bcd4" },
-	{ name = "Development", text = "", fg = "#00bcd4" },
-	{ name = "Documents", text = "", fg = "#00bcd4" },
-	{ name = "Downloads", text = "", fg = "#00bcd4" },
-	{ name = "Library", text = "", fg = "#00bcd4" },
-	{ name = "Movies", text = "", fg = "#00bcd4" },
-	{ name = "Music", text = "", fg = "#00bcd4" },
-	{ name = "Pictures", text = "", fg = "#00bcd4" },
-	{ name = "Public", text = "", fg = "#00bcd4" },
-	{ name = "Videos", text = "", fg = "#00bcd4" },
+	{ name = ".config", text = "", fg = "#1dabbf" },
+	{ name = ".git", text = "", fg = "#0388a6" },
+	{ name = ".github", text = "", fg = "#556e79" },
+	{ name = ".npm", text = "", fg = "#e53935" },
+	{ name = "Desktop", text = "", fg = "#039be5" },
+	{ name = "Documents", text = "", fg = "#42a5f5" },
+	{ name = "Downloads", text = "", fg = "#4caf50" },
+	{ name = "Library", text = "", fg = "#8bc34a" },
+	{ name = "Movies", text = "", fg = "#ff9800" },
+	{ name = "Music", text = "", fg = "#ef5350" },
+	{ name = "Pictures", text = "", fg = "#009688" },
+	{ name = "Public", text = "", fg = "#039be5" },
+	{ name = "Videos", text = "", fg = "#ff9800" },
 ]
 files = [
 	{ name = ".babelrc", text = "", fg = "#cbcb41" },
@@ -997,9 +942,7 @@ conds = [
 	{ if = "dummy", text = "", fg = "#f44336" },
 
 	# Fallback
-	{ if = "dir", text = "", fg = "#03a9f4" },
+	{ if = "dir", text = "", fg = "#91a4ad" },
 	{ if = "exec", text = "", fg = "#8bc34a" },
 	{ if = "!dir", text = "", fg = "#ffffff" },
 ]
-
-# : }}}
