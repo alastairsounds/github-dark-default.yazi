@@ -143,7 +143,7 @@ border = { fg = "#7d8590" }
 title  = { fg = "#7d8590" }
 
 # Table
-tbl_col  = { fg = "#1d4484" }
+tbl_col  = { fg = "#58a6ff" }
 tbl_cell = { fg = "#e3b341", reversed = true }
 
 
